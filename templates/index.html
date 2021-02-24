@@ -1,10 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %} 
-    <h1>Hi there, {{ user.name }}</h1>
-    {% for comment in comments %}
-    <div>
-        {{ comment.author.username }} says: <br> <b>{{ comment.body }} </b>
-    </div>
-    {% endfor %}
+    <table>
+        <tr>
+            <!-- <th>Id</th> -->
+            <th>Task</th>
+            <th>Added on:</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <!-- <td> {{ task.id }} </td> -->
+            <td> {{ task.content }} </td>
+            <td> {{ task.date_created }} </td>
+            <td> 
+                <!-- <a href="/delete/{{task.id}}"> Delete</a>       -->
+                <a href= {{ url_for('delete', id=task.id) }}> Delete</a>      
+                <br>
+                <a href=""> Update</a>      
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="" method="POST">
+        <input type="text" value="" id="task_content" name="content"> 
+        <input type="submit" value="Ok">
+    </form>
 {% endblock %}
