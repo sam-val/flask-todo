@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if tasks %}
+<h3>Things to do</h3>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Date Added</th>
+        <th>Actions</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{ task.name }}</td>
+        <td>{{ task.date_added.date() }}</td>
+        <td>
+            <a href=" {{ url_for('delete', id=task.id) }} ">Delete</a>
+            <a href=" {{ url_for('update', id=task.id) }} ">Update</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+{% else %}
+<h3>No Thing To Do.</h3>
+{% endif %}
+<form action="" method="POST">
+    
+    <input type="text" name="task_name" value="" placeholder="Enter a task here!">
+    <input type="submit" value="OK">
+
+</form>
+
+
+{% endblock %}
