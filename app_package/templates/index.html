@@ -26,9 +26,12 @@
 <h3>No Thing To Do.</h3>
 {% endif %}
 <form action="" method="POST">
-    
-    <input type="text" name="task_name" value="" placeholder="Enter a task here!">
-    <input type="submit" value="OK">
+    {{ form.hidden_tag() }} 
+    <!-- <input type="text" name="task_name" value="" placeholder="Enter a task here!"> -->
+    <p>
+        {{ form.name(size=40) }}
+        {{ form.submit() }}
+    </p>
 
 </form>
 

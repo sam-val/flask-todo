@@ -5,9 +5,13 @@
     Updating Task:
 </h3>
 <form action="" method="POST">
-    
-    <input type="text" name="task_name" value=" {{ task.name }}">
-    <input type="submit" value="Update">
+    {{ form.hidden_tag() }} 
+    <p>
+        {{ form.name(size=40, value=task.name) }}
+        {{ form.submit(size=40, value="Update") }}
+    </p>
+    <!-- <input type="text" name="task_name" value=" {{ task.name }}">
+    <input type="submit" value="Update"> -->
 
 </form>
 
