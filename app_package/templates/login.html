@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Log In</h3>
+    <form action="" method="POST" class="login">
+        {{ form.hidden_tag() }}
+        <span>
+            <div class="label">
+            {{ form.username.label }}:
+            </div>
+            <div>
+            {{ form.username(size=25) }}
+            </div>
+        </span>
+        <span>
+            <div class="label">
+            {{ form.password.label }}:
+            </div>
+            <div>
+            {{ form.password(size=25) }}
+            </div>
+        </span>
+        <span> {{ form.remember_me() }} {{ form.remember_me.label }}</span>
+        <span> {{ form.submit() }}</span>
+    </form>
+{% endblock %}
