@@ -20,6 +20,9 @@
         <span>
             <a href=" {{ url_for('login') }}">Login</a>
         </span>
+        <span>
+            <a href=" {{ url_for('signup') }}">Sign Up</a>
+        </span>
         {% else %}
         <span>
             <a href=" {{ url_for('logout') }}">Logout</a>
@@ -35,6 +38,7 @@
         {{ message }}
     </li>
     {% endfor %}
+
     </ul>
     <hr>
     <div class="wrapper">

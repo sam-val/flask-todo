@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3> random page </h3>
+<h3> 
+    username is:
+    {% if current_user.is_anonymous %}
+        <em> anonymous </em>
+    {% else %}
+        <em> {{ current_user.username }} </em>
+    {% endif %}
+</h3>
+{% endblock %}
