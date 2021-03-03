@@ -31,6 +31,7 @@ def index():
     return render_template('index.html', tasks=tasks, title=title, form=form)
 
 @app.route('/delete/<int:id>')
+@login_required
 def delete(id):
     target_task = Task.query.get_or_404(id)
     try:
@@ -41,7 +42,9 @@ def delete(id):
         flash(message)
 
     return redirect(url_for('index'))
+
 @app.route('/update/<int:id>', methods=['POST', 'GET'])
+@login_required
 def update(id):
     form = TaskForm()
     title = "Updating Page"
@@ -117,3 +120,8 @@ def signup():
                 flash(f"{field}: {error}")
     
     return render_template("signup.html", title=title, form=form)
+
+
+@app.before_request
+def before_request():
+    pass

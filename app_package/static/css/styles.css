@@ -63,21 +63,22 @@ form {
 .signup {
     display: grid;
     grid-template-columns: repeat(2, 400px);
-    grid-template-rows: repeat(5, 30px);
+    grid-template-rows: 50px repeat(5, 30px);
 }
 
 .login {
     display: grid;
-    grid-template-columns: repeat(2, 400px);
-    grid-template-rows: repeat(4, 30px);
+    grid-template-columns: 400px 400px;
+    grid-template-rows: 50px repeat(4, 30px);
 }
 
-.form > div:nth-child(even) {
+.text-right {
     text-align: right;
-} 
-.form > div:nth-child(odd){
+}
+
+.text-left {
     text-align: left;
-} 
+}
 
 .form div {
     padding: 10px;
